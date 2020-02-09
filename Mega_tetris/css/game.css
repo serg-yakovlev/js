@@ -4,31 +4,49 @@
     margin: 0;
 }
 
+@font-face {
+    font-family: amatic-bold;
+    src: url('fonts/Amatic_SC/AmaticSC-Bold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: amatic-reg;
+    src: url('fonts/Amatic_SC/AmaticSC-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
-    background: rgba(73,155,234,1);
-    background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 0%, rgba(40,178,216,1) 39%, rgba(8,199,199,1) 76%, rgba(8,199,199,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(0%, rgba(73,155,234,1)), color-stop(39%, rgba(40,178,216,1)), color-stop(76%, rgba(8,199,199,1)), color-stop(100%, rgba(8,199,199,1)));
-    background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 0%, rgba(40,178,216,1) 39%, rgba(8,199,199,1) 76%, rgba(8,199,199,1) 100%);
-    background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 0%, rgba(40,178,216,1) 39%, rgba(8,199,199,1) 76%, rgba(8,199,199,1) 100%);
-    background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 0%, rgba(40,178,216,1) 39%, rgba(8,199,199,1) 76%, rgba(8,199,199,1) 100%);
-    background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 0%, rgba(40,178,216,1) 39%, rgba(8,199,199,1) 76%, rgba(8,199,199,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#08c7c7', GradientType=1 );
+    background: rgba(6,99,199,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(6,99,199,1)), color-stop(94%, rgba(30,30,30,1)), color-stop(100%, rgba(30,30,30,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+background: radial-gradient(ellipse at center, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+
 }
 
 #app {
     max-width: 565px;
     margin: auto;
-    background-color: rgb(38, 114, 138);
+    background-color: rgba(170,220,255,1) ;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 740px ;
-    border: 5px solid rgb(93, 93, 93);
-    border-radius: 5px;
+    border: 15px solid rgba(170,220,255,1) ;
+    border-radius: 15px;
 }
 
 #game_info {
-    background-color: rgb(5, 43, 54);
-    /* border: 1px solid rgb(93, 93, 93); */
+    background-color: rgb(110, 170, 235);
+    //border-top: 5px solid rgb(110, 170, 235) ;
+    border-right: 5px solid rgba(170,220,255,1) ;
+    //border-bottom: 5px solid rgb(110, 170, 235) ;
+    border-left: 5px solid rgba(170,220,255,1) ;
+    border-radius: 10px;
 }
 
 .grid {
@@ -43,9 +61,12 @@ body {
 }
 
 .col {
+    background-color: rgba(180,230,255,1);
     width: 37px;
     height: 37px;
-    border: 1px solid rgb(5, 138, 172);
+    border: 1px solid rgb(3, 33, 64); 
+    border: 1px solid rgba(150,200,240,1);
+    border-radius: 6px;
 }
 
 .space {
@@ -54,29 +75,35 @@ body {
 }
 
 #next {
+    background-color: rgb(110, 170, 235) ;
     margin: auto;
     width: 148px;
-    height: 148px;
+    height: 154px;
+    border: 3px solid rgb(110, 170, 235) ;
+    border-radius: 9px;
 }
 
 .label {
-    color: rgb(128, 128, 128);
+    color: rgba(180,230,255,1);
     text-align: center;
     text-transform: uppercase;
+    font: 150% amatic-reg;
 }
 
 .value {
-    color: rgb(0, 119, 255);
+    color: rgb(3, 33, 64);
     text-align: center;
+    font: 350% amatic-bold;
 }
 
 .active{
+    border: 1px solid rgb(3, 33, 64); 
     background: rgba(6,99,199,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(0,0,0,1) 94%, rgba(0,0,0,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(6,99,199,1)), color-stop(94%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(0,0,0,1) 94%, rgba(0,0,0,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(0,0,0,1) 94%, rgba(0,0,0,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(0,0,0,1) 94%, rgba(0,0,0,1) 100%);
-    background: radial-gradient(ellipse at center, rgba(6,99,199,1) 0%, rgba(0,0,0,1) 94%, rgba(0,0,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0663c7', endColorstr='#000000', GradientType=1 );
+    background: -moz-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(6,99,199,1)), color-stop(94%, rgba(30,30,30,1)), color-stop(100%, rgba(30,30,30,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+background: radial-gradient(ellipse at center, rgba(6,99,199,1) 0%, rgba(30,30,30,1) 94%, rgba(30,30,30,1) 100%);
+
 }

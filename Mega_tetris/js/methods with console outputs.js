@@ -1,4 +1,4 @@
-'use strict'
+﻿'use strict'
 
 class Field {
 
@@ -65,11 +65,24 @@ class Field {
 class Figure {
     constructor() {
 	this.message = "figure created";
-//console.log(this.message)
 	this.d_shift = 0;
-	this.r_shift = 0;
-//console.log(this.d_shift )
-//console.log(this.r_shift )
+	this.l_shift = 0;
+	this.figures_list = [
+		[[0,0], [1,0], [2,0], [3,0]],
+		[[0,0], [0,1], [0,2], [0,3]],
+
+		[[0,0], [1,0], [2,0], [3,0], [3,1]],
+		[[0,1], [1,1], [2,1], [3,1], [3,0]],
+		[[0,0], [0,1], [0,2], [0,3], [1,3]],
+		[[1,0], [1,1], [1,2], [1,3], [0,3]],
+
+		[[0,0], [1,0], [2,0], [3,0], [0,1]],
+		[[0,1], [1,1], [2,1], [3,1], [0,0]],
+		[[0,0], [0,1], [0,2], [0,3], [1,0]],
+		[[1,0], [1,1], [1,2], [1,3], [0,0]],
+
+		[[0,0], [0,1], [1,0], [1,1]]
+	];
     }
 
     select(n) {
@@ -89,19 +102,24 @@ class Figure {
 
 		[[0,0], [0,1], [1,0], [1,1]]
 	];
+	console.log("start select");
+	console.log("before: d_shift ",figure.d_shift);
 	this.figure_num = n;
+console.log(this.figures_list[0][0], this.figures_list[1][0],this.figures_list[2][0], this.figures_list[3][0],this.figures_list[4][0], this.figures_list[5][0],this.figures_list[6][0], this.figures_list[7][0],this.figures_list[8][0], this.figures_list[9][0],this.figures_list[10][0])
 	this.selected = this.figures_list[n];
+console.log("after selection:",this.selected[0],this.selected[1],this.selected[2],	this.selected[3],this.selected[4]);
 	for (var i = 0; i < this.selected.length; ++i) {
 		this.selected[i][0] += this.d_shift;
-		this.selected[i][1] += this.r_shift;
+		this.selected[i][1] += this.l_shift;
 	}
-    }
+	console.log("end select \n\n\n");
+        }
     
 
-    shift(right=0, down=0) {
-	this.right = right;
+    shift(left=0, down=0) {
+	this.left = left;
 	this.down = down;
-	this.r_shift += this.right;
+	this.l_shift += this.left;
 	this.d_shift += this.down;
 	this.select(this.figure_num);
     }
