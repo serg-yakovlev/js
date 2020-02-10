@@ -41,10 +41,6 @@ class Field {
 
     }
 
-    send_message(a,b="message ") {
-	console.log(b+a);
-    }
-
     set_figure(figure) {
 	this.clean();
 	for (var i = 0; i < figure.length; ++i) {
@@ -64,15 +60,16 @@ class Field {
 
 class Figure {
     constructor() {
-	this.message = "figure created";
-//console.log(this.message)
 	this.d_shift = 0;
 	this.r_shift = 0;
-//console.log(this.d_shift )
-//console.log(this.r_shift )
     }
 
     select(n) {
+//        this.origin_list  =  [0,1,2,3,4,5,6,7,8,9,10];
+	this.max_width_list =  [4,4,4,4,4,4,4,4,4,4, 2];
+	this.init_width_list = [1,4,2,2,4,4,2,2,4,4, 2];
+	this.max_width = this.max_width_list[n];
+	this.init_width = this.init_width_list[n];
 	this.figures_list = [
 		[[0,0], [1,0], [2,0], [3,0]],
 		[[0,0], [0,1], [0,2], [0,3]],

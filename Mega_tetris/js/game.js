@@ -1,27 +1,26 @@
 'use strict'
 
-var figure_number = 4;
+var figure_number = 3;
 var is_rotated = 1;
-var down_shift = 1;
-var right_shift = 1;
-var additional_right_shift = 0;
-if (figure_number==10) {additional_right_shift = 2};
+var down_shift = 2;
+var right_shift = 2;
 var show_all_timer = 1500;
-var figure_moving_timer = 500;
+var figure_moving_timer = 150;
 
 var field = new Field();
 var figure = new Figure();
 
 figure.down=down_shift;
 figure.select(figure_number);
+var figure_width = figure.init_width;
+if (is_rotated) {figure_width = figure.max_width};
 field.set_figure(figure.selected);
-field.show();
 
 show_all_figures();
-setTimeout(go_on, show_all_timer)
+setTimeout(go_on, show_all_timer);
 
 function go_on() {
-	setInterval(rotate_and_shift, figure_moving_timer)
+	setInterval(rotate_and_shift, figure_moving_timer);
 }
 
 function rotate_and_shift() {
@@ -31,7 +30,7 @@ function rotate_and_shift() {
 	if (is_rotated) {figure.rotate()};
 	if (figure.d_shift>19) {
 		next_r_shift = figure.r_shift + right_shift;
-			if (figure.r_shift>(5 + additional_right_shift)) {
+			if (figure.r_shift>(9 - figure_width)) {
 				next_r_shift = 0;
 			}
 		figure = new Figure();

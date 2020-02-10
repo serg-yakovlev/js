@@ -65,7 +65,7 @@ background: radial-gradient(ellipse at center, rgba(6,99,199,1) 0%, rgba(30,30,3
     width: 37px;
     height: 37px;
     border: 1px solid rgb(3, 33, 64); 
-    border: 1px solid rgba(150,200,240,1);
+    //border: 1px solid rgba(150,200,240,1);
     border-radius: 6px;
 }
 
