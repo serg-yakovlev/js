@@ -62,14 +62,6 @@ class Figure {
     constructor() {
 	this.d_shift = 0;
 	this.r_shift = 0;
-    }
-
-    select(n) {
-//        this.origin_list  =  [0,1,2,3,4,5,6,7,8,9,10];
-	this.max_width_list =  [4,4,4,4,4,4,4,4,4,4, 2];
-	this.init_width_list = [1,4,2,2,4,4,2,2,4,4, 2];
-	this.max_width = this.max_width_list[n];
-	this.init_width = this.init_width_list[n];
 	this.figures_list = [
 		[[0,0], [1,0], [2,0], [3,0]],
 		[[0,0], [0,1], [0,2], [0,3]],
@@ -86,6 +78,22 @@ class Figure {
 
 		[[0,0], [0,1], [1,0], [1,1]]
 	];
+
+    }
+
+    select(n) {
+        console.log("start select");
+        for (var fig = 0; fig<this.figures_list.length; ++fig) {
+        console.log("\n\nfigure ", fig);
+        for (var cell = 0; cell<this.figures_list[fig].length; ++cell) {
+            console.log(this.figures_list[fig][cell][0], this.figures_list[fig][cell][1]);
+        }
+    }
+
+	this.max_width_list =  [4,4,4,4,4,4,4,4,4,4, 2];
+	this.init_width_list = [1,4,2,2,4,4,2,2,4,4, 2];
+	this.max_width = this.max_width_list[n];
+	this.init_width = this.init_width_list[n];
 	this.figure_num = n;
 	this.selected = this.figures_list[n];
 	for (var i = 0; i < this.selected.length; ++i) {
@@ -104,7 +112,7 @@ class Figure {
     }
 
     rotate() {
-//      this.origin_list  = [0,1,2,3,4,5,6,7,8,9,10];
+//  this.origin_list  = [0,1,2,3,4,5,6,7,8,9,10];
 	this.rotated_list = [1,0,5,4,6,7,9,8,2,3,10];
 
 	this.figure_num = this.rotated_list[this.figure_num];

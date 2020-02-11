@@ -5,7 +5,7 @@ var is_rotated = 1;
 var down_shift = 2;
 var right_shift = 2;
 var show_all_timer = 1500;
-var figure_moving_timer = 150;
+var figure_moving_timer = 1000;
 
 var field = new Field();
 var figure = new Figure();
